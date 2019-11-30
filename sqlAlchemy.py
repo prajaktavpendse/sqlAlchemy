@@ -44,3 +44,5 @@ print(c2.first_name, c2.last_name)
 
 session.add(c1)
 session.add(c2)
+
+print(c1.id, c2.id)
