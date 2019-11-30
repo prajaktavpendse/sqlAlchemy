@@ -38,3 +38,9 @@ c2 = Customer(first_name='Scott',
               )
 print("Customer 1 is: {}".format(c1))
 print("Customer 2 is: {}".format(c2))
+
+print(c1.first_name, c1.last_name)
+print(c2.first_name, c2.last_name)
+
+session.add(c1)
+session.add(c2)
