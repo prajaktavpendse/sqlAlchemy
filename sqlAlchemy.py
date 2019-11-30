@@ -1,4 +1,18 @@
-from sqlalchemy.orm import create_engine, Session
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
+class Customer:
+    def __init__(self,first_name,last_name,username,email, address,town):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_name = username
+        self.email = email
+        self.address = address
+        self.town = town
+
+    def __repr__(self):
+        return "{} {} {} {} {} {}".format(self.first_name, self.last_name, self.user_name, self.email, self.address, self.town)
+
 engine = create_engine("postgres+psycopg2://postgres:pass@localhost/mydb")
 session = Session(bind=engine)
 
@@ -22,4 +36,5 @@ c2 = Customer(first_name='Scott',
               address='424 Patterson Street',
               town='Beckinsdale'
               )
-c1, c2
+print("Customer 1 is: {}".format(c1))
+print("Customer 2 is: {}".format(c2))
